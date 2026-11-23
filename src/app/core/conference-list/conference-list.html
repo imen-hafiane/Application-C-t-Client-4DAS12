@@ -1,0 +1,26 @@
+<h1>Conference List</h1>
+<p></p>
+<input type="text" [(ngModel)]="searchItem"> {{ searchItem }}
+<p></p>
+<div class="container">
+@for(conf of filter();track conf.id) {
+    @if(conf.nbPlaces>0){
+<app-card [conf]="conf"> </app-card>
+}
+}@empty {
+  <p>Aucune conference disponible pour le moment.</p>
+}
+
+</div>
+
+<div>
+<h2> Liste des Favoris</h2>
+  <ul>
+  @for(conf of favoriteList();track conf.id) {
+    <li>{{ conf.titre }}</li>
+  }
+  </ul>
+
+</div>
+
+<h1>{{ x() }}</h1>

@@ -1,0 +1,12 @@
+
+  <div class="card" style="max-width: 320px">
+    <img src="{{ conf.imageUrl }}" class="card-img-top" alt="conf_image">
+    <div class="card-body">
+      <h4 class="card-title">{{ conf.titre | uppercase }}</h4>
+      <p class="card-text">{{ conf.category }}</p>
+      <p class="card-text">Date de la conférence : {{ conf.date | date:'dd/MM/yyyy' }}</p>
+      <a href="#" class="btn-solid theme-primary" (click)="addToFavorites(conf)">Add to Favorites</a>
+      <p></p>
+      <a href="#" class="btn-solid theme-primary" (click)="liker(conf)">Likes : {{ conf.nbLikes }}</a>
+    </div>
+  </div>
